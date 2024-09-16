@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Delete Page</h1>
+<form method="post">
+  {% csrf_token %}
+  <p>Are you sure want to delete DLM, {{dlm.sname}}</p>
+  <button type="submit" name="deletedlm">Delete</button>
+
+
+</form>
+{% endblock %}

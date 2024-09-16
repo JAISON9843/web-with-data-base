@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% block content %}
+<style>
+    h1{
+    color:blue;
+    }
+    table{
+    width:100%;
+    }
+    th,td{
+    border:1px solid black;
+    padding:10px 10px;
+    }
+    th{
+    color:red;
+    background-color:yellow;
+
+    }
+    tr:nth-child(even){
+    background-color:pink
+    }
+
+</style>
+<h1>Student Registered</h1>
+<table>
+    <thead>
+    <tr>
+        <th>Student Name</th>
+        <th>Student Email</th>
+        <th>Course</th>
+        <th>Fee</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for dlm in dlms %}
+    <tr>
+        <td>{{dlm.sname}}</td>
+        <td>{{dlm.semail}}</td>
+        <td>{{dlm.course}}</td>
+        <td>{{dlm.fee}}</td>
+        <td><a href="{% url 'editdlm' dlm.id %}">Edit</a></td>
+        <td><a href="{% url 'deletedlm' dlm.id %}">Delete</a></td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

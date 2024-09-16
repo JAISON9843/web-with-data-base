@@ -1,0 +1,27 @@
+
+{% extends 'base.html' %}
+{% block content %}
+<style>
+    form{
+    width:400px;
+    margin-left:400px;
+    margin-top:10px;
+    background-color:lightpink
+
+    }
+    h1{
+    color:blue;
+    }
+    button{
+    color:red;
+    background-color:yellow
+    }
+</style>
+<form method="post">
+    <h2>Register here </h2>
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit" name="signup">Signup</button>
+
+</form>
+{% endblock %}
